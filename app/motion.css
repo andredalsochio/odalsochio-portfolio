@@ -1,4 +1,10 @@
 body { background: #080e0b; overflow-x: clip; }
+.company-section { padding-top: 90px; padding-bottom: 100px; background: #080e0be8; }
+.company-intro { max-width: 780px; color: #bdc5b6; line-height: 1.8; margin: 32px 0; }
+.company-details { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,300px),1fr)); gap: 30px; margin: 45px 0; }
+.company-details div { border-top: 1px solid var(--border); padding-top: 20px; }
+.company-details dt { color: var(--accent); font-size: 13px; margin-bottom: 10px; }
+.company-details dd { margin: 0; line-height: 1.6; overflow-wrap: anywhere; }
 .particle-field { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
 .site-header { position: relative; z-index: 2; }
 .hero { min-height: calc(100svh - 108px); display: flex; flex-direction: column; justify-content: center; padding-top: 65px; }
