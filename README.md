@@ -14,6 +14,7 @@ Edite `lib/portfolio.ts` e adicione itens à lista `projects`. A seção “Em b
 ## Conteúdo e visual
 
 - `app/page.tsx`: textos e estrutura.
+- `app/termos/page.tsx` e `app/privacidade/page.tsx`: informações institucionais e legais exibidas no rodapé.
 - `lib/portfolio.ts`: links pessoais e projetos.
 - `app/globals.css`: cores, tipografia e responsividade.
 - `app/layout.tsx`: título e descrição para buscadores.
