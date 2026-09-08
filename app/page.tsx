@@ -1,9 +1,12 @@
 import { ArrowDown, ArrowUpRight, Code2 } from 'lucide-react';
 import { profile } from '@/lib/portfolio';
+import { ParticleField } from '@/components/particle-field';
+import './motion.css';
 
 export default function Home() {
   return (
     <>
+      <ParticleField />
       <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <header className="site-header wrap">
         <a href="#inicio" className="wordmark" aria-label="André Dalsochio, início">dalsochio<span>_</span></a>

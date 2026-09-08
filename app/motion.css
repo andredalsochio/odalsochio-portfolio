@@ -1,0 +1,36 @@
+body { background: #080e0b; }
+.particle-field { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+.site-header { position: relative; z-index: 2; }
+.hero { min-height: calc(100svh - 108px); display: flex; flex-direction: column; justify-content: center; padding-top: 65px; }
+.hero h1 { font-size: clamp(88px, 11.5vw, 158px); text-shadow: 0 4px 65px #080e0b; }
+.hero-bottom { padding-top: 20px; }
+.hero-bottom p { text-shadow: 0 2px 15px #080e0b; }
+.hero-index { margin-top: auto; }
+.about { min-height: 100svh; align-items: center; padding-top: 180px; padding-bottom: 180px; position: relative; }
+.about::before { content: ''; position: absolute; inset: 0 -2vw; background: linear-gradient(transparent, #080e0bdd 45%, #080e0b99); z-index: -1; }
+.about h2 { font-size: clamp(64px, 8vw, 110px); }
+.about-lead { font-size: clamp(26px, 3vw, 38px); }
+.contact { min-height: 80svh; display: flex; flex-direction: column; justify-content: center; background: #080e0bc9; }
+footer { background: #080e0b; }
+.motion-toggle { position: fixed; bottom: 18px; right: 18px; z-index: 5; padding: 10px 14px; border: 1px solid #65745a; border-radius: 24px; color: #d1dac9; background: #080e0be8; font: 11px var(--font-geist-mono), monospace; cursor: pointer; }
+.motion-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.motion-toggle:hover { border-color: var(--accent); }
+@supports (animation-timeline: view()) {
+  .about > div, .contact-heading, .contact-bottom { animation: rise-in linear both; animation-timeline: view(); animation-range: entry 0% entry 80%; }
+  .hero h1 { animation: drift-out linear both; animation-timeline: view(); animation-range: exit 0% exit 100%; }
+}
+@keyframes rise-in { from { opacity: .15; transform: translateY(65px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes drift-out { to { opacity: .1; transform: translateY(90px) scale(.92); } }
+@media(max-width:800px) {
+  .hero { min-height: calc(100svh - 86px); }
+  .hero h1 { font-size: clamp(70px, 15vw, 112px); }
+  .about { padding-top: 100px; padding-bottom: 100px; }
+  .contact { min-height: 75svh; }
+  .site-header nav a:nth-child(2) { display: flex; }
+  .contact-bottom p { overflow-wrap: anywhere; }
+  footer { padding-bottom: 75px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .about > div, .contact-heading, .contact-bottom, .hero h1 { animation: none; }
+  .motion-toggle { display: none; }
+}
